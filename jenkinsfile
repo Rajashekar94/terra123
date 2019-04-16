@@ -1,6 +1,6 @@
 node {
-   stage ('checkout')
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://gitlab.com/Rajashekaryadav/instances_jenkins.git']]])
+   stage 'checkout'
+       git 'https://github.com/Rajashekar94/terra123.git'
 
   stage('Terraform init'){
       
