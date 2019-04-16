@@ -1,4 +1,4 @@
-node {
+
    stage('Checkout code') {
         steps {
            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], 
@@ -6,5 +6,5 @@ node {
         }
     }
     
-    } 
+ 
 
