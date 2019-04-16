@@ -1,5 +1,5 @@
 node {
-   stage ('checkout')
+   stage 'checkout'
    
        git 'https://github.com/Rajashekar94/terra123.git'checkout([$class: 'GitSCM', branches: [[name: '*/master']],
        doGenerateSubmoduleConfigurations: false, extensions: [],
