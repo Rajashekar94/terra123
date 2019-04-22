@@ -5,7 +5,7 @@ properties([gitLabConnection(''), [$class: 'GitlabLogoProperty', repositoryName:
 node {
    stage 'checkout'
    
-       git 'https://github.com/Rajashekar94/terra123.git'
+            git 'https://github.com/Rajashekar94/terra123.git', Ubuntu: "${params.Ubuntu}"
 
   stage('Terraform init'){
 
