@@ -1,3 +1,7 @@
+properties([gitLabConnection(''), [$class: 'GitlabLogoProperty', repositoryName: ''],
+            parameters([choice(choices: ['Ubuntu_16.04', 'Ubuntu_18.06', 'CentOs', 'Red-Hat'], 
+                               description: 'Select the OS ', name: 'Ubuntu')])])
+
 node {
    stage 'checkout'
    
@@ -17,12 +21,7 @@ stage('Terraform apply'){
     sh "terraform apply -input=false -auto-approve"
 
     }
-   stage('Terraform destroy'){
-
-    sh "terraform destroy -input=false -auto-approve"
-
-    }
-
+   
     }
 
 
