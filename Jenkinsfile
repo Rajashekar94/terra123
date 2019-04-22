@@ -1,12 +1,10 @@
 properties([gitLabConnection(''), [$class: 'GitlabLogoProperty', repositoryName: ''],
-            parameters([choice(choices: ['Ubuntu_16.04', 'Ubuntu_18.06', 'CentOs', 'Red-Hat'], 
-                               description: 'Select the OS ', name: 'Ubuntu')])])
-
+            parameters([choice(choices: ['Ubuntu_16.04', 'Ubuntu_18.06'], description: 'Select the OS ', name: 'Select OS')])])
 node {
    stage 'checkout'
    
-            git 'https://github.com/Rajashekar94/terra123.git', Ubuntu: "${params.Ubuntu_16.04}"
-
+            git 'https://github.com/Rajashekar94/terra123.git'
+                        
   stage('Terraform init'){
 
   sh "terraform init"
