@@ -1,5 +1,5 @@
 
 @Library("my_shared_library") _
-   groovy {
+ node_build {
        
     }
